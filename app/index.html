@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Leonida Ledger: an offline guide and tracker for all 55 GTA VI PlayStation 5 trophies, with a platinum roadmap, missable watch, cited guides and saved progress.">
+<title>Leonida Ledger — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<noscript><p style="padding:16px">Leonida Ledger needs JavaScript: the checklist, filters and saved progress all run in your browser, offline.</p></noscript>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">LL</span>
+    <div>
+      <h1>LEONIDA LEDGER</h1>
+      <p class="subtitle">GTA VI Trophy Guide &amp; Tracker — all 55 PlayStation 5 trophies</p>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-line"><strong id="progress-count">0/55</strong><span id="progress-pct">0%</span><span id="progress-points">0 / 1,350 PSN points</span></div>
+    <div class="progress-bar" role="progressbar" aria-label="Trophies earned"><div id="progress-fill" class="progress-fill"></div></div>
+    <div class="grade-counts" id="grade-counts"></div>
+  </div>
+  <div class="save-box">
+    <button id="export-btn" type="button">Export</button>
+    <button id="import-btn" type="button">Import</button>
+    <input id="import-file" type="file" accept="application/json" hidden>
+    <button id="reset-btn" type="button">Reset</button>
+    <span id="saved-stamp" class="saved-stamp">Not saved yet</span>
+    <label class="spoiler-toggle"><input id="spoiler-toggle" type="checkbox"> Spoilers hidden</label>
+  </div>
+</header>
+
+<section class="audit" id="audit-strip" aria-label="Audit strip"></section>
+
+<nav class="tabs" aria-label="Views">
+  <button type="button" data-tab="checklist" class="tab active">Checklist</button>
+  <button type="button" data-tab="roadmap" class="tab">Roadmap</button>
+  <button type="button" data-tab="missables" class="tab">Missables</button>
+  <button type="button" data-tab="sources" class="tab">Sources &amp; save</button>
+</nav>
+
+<div class="toolbar" id="toolbar">
+  <div class="filters" id="filters" role="group" aria-label="Filter by kind"></div>
+  <select id="grade-filter" aria-label="Filter by grade">
+    <option value="all">All grades</option>
+    <option value="platinum">Platinum</option>
+    <option value="gold">Gold</option>
+    <option value="silver">Silver</option>
+    <option value="bronze">Bronze</option>
+  </select>
+  <select id="sort-select" aria-label="Sort trophies">
+    <option value="roadmap">Sort: Roadmap order</option>
+    <option value="grade">Sort: Grade</option>
+    <option value="az">Sort: A–Z</option>
+    <option value="difficulty">Sort: Difficulty</option>
+  </select>
+  <input id="search" type="search" placeholder="Search trophies…" aria-label="Search trophies">
+  <span id="search-count" class="search-count"></span>
+</div>
+
+<div class="layout">
+  <main id="app" aria-live="polite"></main>
+  <aside id="detail" class="detail" aria-label="Trophy detail"></aside>
+</div>
+
+<footer class="footer">
+  <p>Unofficial fan guide · not affiliated with Rockstar Games or Sony. Trophy names, descriptions and grades as PlayStation publishes them.</p>
+  <p>Platinum takes about 200 hours · 1 playthrough · 0 online trophies · no mission replay — keep a manual save at the start of every chapter.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
